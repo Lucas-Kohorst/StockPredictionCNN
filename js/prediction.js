@@ -117,6 +117,10 @@ $(document).ready(function() {
                     let nextDayPrediction = generateNextDayPrediction(result.originalData, result.timePortion);
                     // Get the last date from the data set
                     var numDays = document.getElementById("days").value;
+                    // Checking if the input was filled in
+                    if (numDays == "") {
+                        numDays = 2;
+                    }
                     let predictDate = (new Date(labels[labels.length - 1] + 'T00:00:00.000')).addDays(parseInt(numDays));
 
                     // Build the Convolutional Tensorflow model
@@ -182,7 +186,7 @@ $(document).ready(function() {
 
                             });
 
-                        } catch {
+                        } catch(error) {
                             print("Could not find the stock");
                         }
 
