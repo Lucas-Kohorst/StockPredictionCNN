@@ -1,7 +1,7 @@
 /*
     Plot two arrays of data using Chart.js lib
 */
-const plotData = function (data1, data2, label = null) {
+const plotData = function(data1, data2, label = null) {
 
     var N = label ? label : [...Array(Math.max(data1.length, data2.length)).keys()];
 
@@ -58,4 +58,4 @@ const plotData = function (data1, data2, label = null) {
 
     var ctx = document.getElementById('canvas').getContext('2d');
     window.myLine = new Chart(ctx, config);
-}    
+}

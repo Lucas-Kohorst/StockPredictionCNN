@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.2/dist/tf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/createTable.js"></script>
     <title>Stock Prediction</title>
 </head>
 
@@ -21,49 +22,18 @@
             <div class="col-sm-4 col-md-4">
                 <div id="custom-search-form" class="form-search form-horizontal">
                     <div class="input-group">
-                        <input id="company" type="text" class="form-control" placeholder="Search for...">
+                        <input id="company" type="text" class="form-control" onkeyup="filterTable();" placeholder="Search for...">
                         <span class="input-group-btn">
-                            <button id="getCompany" class="btn btn-default" style="z-index: 99;" type="submit">
+                            <button id="getCompany" class="btn btn-default" style="z-index: 99;"
+                                type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
                     </div>
+                    <input id="days" type="text" class="form-control" placeholder="Predict for 1 Day">
                 </div>
                 <div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Company</th>
-                                <th>Symbol</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Google</td>
-                                <td>GOOGL</td>
-                            </tr>
-                            <tr>
-                                <td>Apple</td>
-                                <td>AAPL</td>
-                            </tr>
-                            <tr>
-                                <td>Microsoft</td>
-                                <td>MSFT</td>
-                            </tr>
-                            <tr>
-                                <td>Amazon</td>
-                                <td>AMZN</td>
-                            </tr>
-                            <tr>
-                                <td>Tesla</td>
-                                <td>TSLA</td>
-                            </tr>
-                            <tr>
-                                <td>Dow Jones Industrial Average</td>
-                                <td>DIA</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div id="stock-table"></div>
                 </div>
                 <div class="cnn"></div>
             </div>
