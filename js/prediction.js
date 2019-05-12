@@ -125,7 +125,7 @@ $(document).ready(function() {
 
                     // Build the Convolutional Tensorflow model
                     buildCnn(result).then(function(built) {
-
+                        console.log(result);
                         try {
                             // Transform the data to tensor data
                             // Reshape the data in neural network input format [number_of_samples, timePortion, 1];
